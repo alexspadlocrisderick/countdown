@@ -221,22 +221,8 @@ body {
   .text{
     width: 100% !important;
   }
-  #background{
-    background: url('../image/leadspace-center.png') !important;
-    background-size: 100% !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-    background-position: bottom !important;
-    background-color: #00060e !important;
-  }
   .ibm-vertical-center{
     align-items: inherit !important;
-  }
-}
-
-@media (max-width: 1200px) and (min-width: 1000px) {
-  .ibm-disrupt-background{
-    background-position: 63% center !important;
   }
 }
 
