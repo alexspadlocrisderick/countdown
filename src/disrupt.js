@@ -46,7 +46,15 @@ $(document).ready(function() {
 
 setTimeout(function (){
   $(".next").click();
+  feijao();
 }, 2000);
+
+function feijao(){
+  setTimeout(function (){
+    var b = $('.next');
+    b[1].click();
+  }, 2000);
+}
 
 
 // set the date we're counting down to
