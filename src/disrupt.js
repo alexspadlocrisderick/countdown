@@ -53,12 +53,20 @@ function feijao(){
   setTimeout(function (){
     var b = $('.next');
     b[1].click();
+    setTimeout(function (){
+      var b = $('.next');
+      b[2].click();
+      setTimeout(function (){
+        var b = $('.next');
+        b[3].click();
+      }, 2000);
+    }, 2000);
   }, 2000);
 }
 
 
 // set the date we're counting down to
-var target_date = new Date(2018, 06, 26, 09, 00, 00).getTime();
+var target_date = new Date(2018, 07, 09, 23, 00, 00).getTime();
 // variables for time units
 var days, hours, minutes, seconds;
 // update the tag with id "countdown" every 1 second
