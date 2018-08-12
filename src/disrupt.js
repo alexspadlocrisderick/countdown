@@ -44,26 +44,48 @@ $(document).ready(function() {
 });
 
 
-setTimeout(function (){
-  $(".next").click();
-  feijao();
-}, 2000);
+feijao();
 
 function feijao(){
   setTimeout(function (){
-    var b = $('.next');
-    b[1].click();
+    b = $('.next');
+    b[0].click();
     setTimeout(function (){
-      var b = $('.next');
-      b[2].click();
+      b[1].click();
       setTimeout(function (){
-        var b = $('.next');
-        b[3].click();
+        b[2].click();
+        setTimeout(function (){
+          b[3].click();
+        }, 2000);
       }, 2000);
     }, 2000);
   }, 2000);
 }
 
+
+var startStamp = new Date(2018, 07, 09, 23, 00, 00).getTime();
+var newDate = new Date();
+var newStamp = newDate.getTime();
+
+function updateClock() {
+
+    newDate = new Date();
+    newStamp = newDate.getTime();
+    var diff = Math.round((newStamp - startStamp) / 1000);
+
+    var d = Math.floor(diff / (24 * 60 * 60));
+    /* though I hope she won't be working for consecutive days :) */
+    diff = diff - (d * 24 * 60 * 60);
+    var h = Math.floor(diff / (60 * 60));
+    diff = diff - (h * 60 * 60);
+    var m = Math.floor(diff / (60));
+    diff = diff - (m * 60);
+    var s = diff;
+
+    $('.time-elapsed').html('<h4>Stupid Agency delay in: <span class="red">' + d + ' days and ' + h + ':' + m + ':' + s + '</span></h4>');
+}
+
+setInterval(updateClock, 1000);
 
 // set the date we're counting down to
 var target_date = new Date(2018, 07, 09, 23, 00, 00).getTime();

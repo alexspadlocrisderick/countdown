@@ -22,6 +22,15 @@ body {
   margin: 0 auto !important;
 }
 
+.clear {
+  clear: both;
+  padding-top: 20px;
+}
+
+.red{
+  color: red;
+}
+
 .ibm-textcolor-white-core{
   color: white;
   padding-top: 6px;
