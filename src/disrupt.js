@@ -4,6 +4,8 @@ $(document).ready(function() {
   var left, opacity, scale; //fieldset properties which we will animate
   var animating; //flag to prevent quick multi-click glitches
 
+  updateClock();
+
   $(".next").click(function(){
     if(animating) return false;
     animating = true;
@@ -63,32 +65,12 @@ function feijao(){
 }
 
 
-var startStamp = new Date(2018, 07, 09, 23, 00, 00).getTime();
-var newDate = new Date();
-var newStamp = newDate.getTime();
-
 function updateClock() {
-
-    newDate = new Date();
-    newStamp = newDate.getTime();
-    var diff = Math.round((newStamp - startStamp) / 1000);
-
-    var d = Math.floor(diff / (24 * 60 * 60));
-    /* though I hope she won't be working for consecutive days :) */
-    diff = diff - (d * 24 * 60 * 60);
-    var h = Math.floor(diff / (60 * 60));
-    diff = diff - (h * 60 * 60);
-    var m = Math.floor(diff / (60));
-    diff = diff - (m * 60);
-    var s = diff;
-
-    $('.time-elapsed').html('<h4>Stupid Agency delay in: <span class="red">' + d + ' days and ' + h + ':' + m + ':' + s + '</span></h4>');
+    $('.time-elapsed').html('<h4>Stupid Agency delay in: <span class="red">26 days and 12:00:00</span></h4>');
 }
 
-setInterval(updateClock, 1000);
-
 // set the date we're counting down to
-var target_date = new Date(2018, 07, 09, 23, 00, 00).getTime();
+var target_date = new Date(2018, 08, 11, 12, 00, 00).getTime();
 // variables for time units
 var days, hours, minutes, seconds;
 // update the tag with id "countdown" every 1 second
